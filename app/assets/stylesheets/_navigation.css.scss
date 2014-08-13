@@ -1,0 +1,31 @@
+$blue: #0F6DA7;
+$background: white;//#E2FFF2;
+body.background{
+  background: $background;
+
+}
+nav.row{
+  .button-group{
+    .button{
+      color: $blue;
+      background:  $background;
+      font-size: 12pt;
+      &:hover{
+        background: #f9f9f9;
+
+      }
+    }
+  }
+  margin-top: 10px;
+  margin-bottom:30px;
+}
+
+.logo-section{
+  height: 32px;
+  margin-top: 12px;
+  background-image: image-url('logo.png');
+  background-repeat: no-repeat;
+  background-size:100%;
+}
+
+
