@@ -1,14 +1,14 @@
 <nav class="row">
   <div class="small-3 columns">
-    <span class="active-section"><%=things%></>
+    <span class="active-section"><%=active_section%></>
   </div>
   <div class="large-9 columns">
     <ul class="button-group right">
-      <li><a href="#about" class="button tiny <%= find_active_section(things, "about")%>">About</a></li>
-      <li><a href="#team" class="button tiny <%= find_active_section(things, "Meet the team")%>">Meet the Team</a></li>
-      <li><a href="#contact" class="button tiny <%= find_active_section(things, "contact")%>">Contact</a></li>
-      <li><a href="#timeline" class="button tiny <%= find_active_section(things, "timeline")%>">Timeline</a></li>
-      <li><a href="#events" class="button tiny <%= find_active_section(things, "events")%>">Events</a></li>
+      <li><a href="#about" class="button tiny <%= find_active_section(active_section, "about")%>">About</a></li>
+      <li><a href="#team" class="button tiny <%= find_active_section(active_section, "Meet the team")%>">Meet the Team</a></li>
+      <li><a href="#contact" class="button tiny <%= find_active_section(active_section, "contact")%>">Contact</a></li>
+      <li><a href="#timeline" class="button tiny <%= find_active_section(active_section, "timeline")%>">Timeline</a></li>
+      <li><a href="#events" class="button tiny <%= find_active_section(active_section, "events")%>">Events</a></li>
     </ul>
   </div>
 </nav>
