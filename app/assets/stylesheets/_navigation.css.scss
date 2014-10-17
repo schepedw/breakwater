@@ -7,30 +7,36 @@
 }
 
 nav ul.right{
+  width:287px;
   li{
     list-style:none;
     display:inline;
-    margin-right:4px;
+    margin:0;
     a{
       font-size:11px;
       font-family: Arial, sans-serif;
       color: white;
     }
   }
-
   color: white;
 }
 
 .f-dropdown.narrow{
   max-width: 100px;
-  height: 185px;
+  height: 120px;
   overflow:scroll;
   li {
     a{
       color:black;
+      &:hover{
+        background:aliceblue;
+      }
     }
-
   }
+}
+
+nav.row .no-padding-right{
+  padding-right: 0px;
 }
 
 .search {
@@ -46,7 +52,7 @@ nav ul.right{
       border: 1px solid #cccccc;
       display: inline-block;
       height: 1.3125rem;
-      width: 30%;
+      width: 95px;
       font-size: 9pt;
       padding-left:10px;
     }
