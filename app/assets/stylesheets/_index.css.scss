@@ -1,6 +1,23 @@
+$button-height: 40px;
 .carousel-image{
   width:100%;
   height: 500px;
+}
+
+.content-nav{
+  li{
+    width: 20%;
+    height:$button-height;
+    .button{
+      width: 100%;
+      background-color: #ebe4da;
+      font-size:13px;
+      color:#5c423b;
+      font-family:VistaSans,"Lucida Sans","Lucida Grande",Verdana,Arial,sans-serif;
+      height:$button-height;
+    }
+  }
+
 }
 
 #about {

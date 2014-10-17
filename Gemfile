@@ -34,6 +34,7 @@ gem 'pry'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+gem 'compass-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -53,5 +53,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root 'breakwater#index'
+ get '/about' => 'breakwater#about'
+ get '/timeline' => 'breakwater#timeline'
+ root 'breakwater#index'
 end

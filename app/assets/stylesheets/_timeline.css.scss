@@ -1,0 +1,185 @@
+@import "compass/css3";
+$break-point: 648px;/*key parameter*/
+//timeline style
+$timeline-height:500px;
+$timeline-title-padding:24px;
+$timeline-title-border:1px solid rgba(#8A9AA8,.7);
+$timeline-title-color: #8A9AA8;
+
+//background style
+$bg-width:1900px;/*key parameter*/
+$bg-height:500px;
+$bg-setting:url(http://images.psxextreme.com/wallpapers/ps3/horizontal_reflex_848.jpg) 0 -350px;
+
+//panel style
+$time-label-font-size:60px;
+$time-label-font-style:italic;
+$time-label-padding:0 0 0 24px;
+$time-label-color:rgba(#29333D,.5);
+$panel-width:340px;
+$panel-title-padding:0px 0 12px 24px;
+$panel-title-color:#29333D;
+$panel-content-padding:12px 64px 18px 24px;
+$panel-content-font-size:18px;
+$panel-content-color:#29333D;
+$panel-active-scale:1.1;
+//responsive style
+$panel-content-rp-padding:18px 12px;
+$panel-title-rp-padding:0 12px;
+$panel-title-rp-color:$panel-title-color;
+$panel-content-rp-color:$panel-content-color;
+
+
+//nav style
+$slide-nav-padding:10px 16px;
+$slide-nav-border-width: 4px;
+$slide-nav-border-color: #F0F3F0;
+$slide-nav-color: $slide-nav-border-color;
+$slide-nav-border-color: #F0F3F0;
+$slide-nav-hover-bg-color: $slide-nav-border-color;
+$slide-nav-hover-color: #60768B;
+$slide-nav-select-bg-color: $slide-nav-hover-bg-color;
+$slide-nav-select-color: $slide-nav-hover-color;
+
+
+body {
+  padding:0;
+  margin:0;
+}
+
+* {
+  font-family:arial;
+}
+.timeline {
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  height:$timeline-height;
+  .timeline-title {
+    margin:0;
+    padding:$timeline-title-padding;
+    text-align:center;
+    border-bottom: $timeline-title-border;
+    color:$timeline-title-color;
+  }
+  .slide-bg {
+    top:0;
+    z-index:-1;
+    position:absolute;
+    height:$bg-height;
+    width:$bg-width;
+    background: $bg-setting;
+    background-size:cover;
+  }
+  .panel-container {
+    margin-top:36px;
+    height:100%;
+    width:100%;
+    position:relative;
+
+    .slide-panel {
+      width:$panel-width;
+      @include transition(all 1s ease);
+      position:absolute;
+      .time-label {
+        font-size:$time-label-font-size;
+        font-style:$time-label-font-style;
+        padding:$time-label-padding;
+        color:$time-label-color;
+      }
+      .panel-title {
+        padding:$panel-title-padding;
+        margin:0;
+        color:$panel-title-color;
+      }
+      .panel-content {
+        padding:$panel-content-padding;
+        font-size:$panel-content-font-size;
+        color:$panel-content-color;
+      }
+    }
+
+  }
+
+  .slide-nav {
+    position:absolute;
+    bottom:0;
+    text-align:center;
+    width:100%;
+    //display:none;
+    a {
+      cursor:pointer;
+      display:inline-block;
+      padding:$slide-nav-padding;
+      border-left:$slide-nav-border-width solid $slide-nav-border-color;
+      border-top:$slide-nav-border-width solid $slide-nav-border-color;
+      color:$slide-nav-border-color;
+      @include transition(all .5s ease);
+      &:last-child {
+        border-right:$slide-nav-border-width solid $slide-nav-border-color;
+        @include border-top-right-radius($slide-nav-border-width);
+      }
+      &:first-child {
+        @include border-top-left-radius($slide-nav-border-width);
+      }
+      &:hover {
+        background:$slide-nav-hover-bg-color;
+        color:$slide-nav-hover-color;
+        @include transition(all .5s ease);
+      }
+    }
+  }
+}
+@media screen and (max-width:$break-point) {
+
+    .timeline {
+      height:auto;
+    }
+    .panel-container{
+      position:static !important;
+    }
+
+    .slide-panel {
+      position:static !important;
+      border-bottom:$timeline-title-border;
+      margin:auto;
+      
+    } 
+    .panel-title {
+      padding:$panel-title-rp-padding !important;
+      color:$panel-title-rp-color !important;
+    }
+    .panel-content {
+      padding:$panel-content-rp-padding !important;
+      color:$panel-content-rp-color !important;
+    }
+
+
+    .time-label {
+      text-align:right;
+    }
+
+    .slide-bg {
+      //display:none;
+      background-position:center center !important;
+      height:100% !important;
+      width:100% !important;
+      //position:static !important;
+      left:0 !important;
+
+    }
+    .slide-nav {
+      display:none;
+    }
+
+}
+.nav-selected {
+  background:$slide-nav-select-bg-color;
+  color:$slide-nav-select-color !important;
+}
+.panel-selected {
+  @media screen and (min-width:$break-point) {
+    @include transform(scale($panel-active-scale));
+    @include transition(all 1s ease); 
+  }
+}
