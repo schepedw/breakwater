@@ -1,14 +1,10 @@
 body.background{
   background: image-url('background.jpg') repeat-x fixed center top #203341;
 }
-/*.bg-silhouette {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-image: image-url('skyline_silhouette.jpg');
-  background-repeat-y: no-repeat;
-  background-size:contain;
-  opacity: .03;
-  width: 100%;
-  height: 100%;
-}*/
+.bg-silhouette {
+  background: image-url('skyline_silhouette.jpg') repeat-x fixed center bottom;
+  background-position-y:130px;
+  opacity: .02;
+  height: 215px;
+  margin-bottom:-215px;
+}

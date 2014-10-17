@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
- get '/about' => 'breakwater#about'
+ get '/meet' => 'breakwater#meet_the_team'
  get '/timeline' => 'breakwater#timeline'
  root 'breakwater#index'
 end
