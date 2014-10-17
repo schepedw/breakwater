@@ -1,0 +1,21 @@
+$button-height: 40px;
+.content-nav{
+  li{
+    width: 20%;
+    height:$button-height;
+    .button{
+      width: 100%;
+      background-color: #ebe4da;
+      font-size:13px;
+      font-weight:bold;
+      font-family:VistaSans,"Lucida Sans","Lucida Grande",Verdana,Arial,sans-serif;
+      color:#5c423b;
+      height:$button-height;
+      border:1px solid rgba(255, 255, 255, 0.5);
+      line-height:0.5;
+      &:hover{
+        background:#CCCCCC;
+      }
+    }
+  }
+}
