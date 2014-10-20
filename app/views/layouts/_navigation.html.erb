@@ -1,18 +1,52 @@
+<% require 'pry'%>
 <nav class="row">
 <a href="/" class="logo-section small-3 columns"></a>
 <div class="large-9 columns no-padding-right">
   <ul class="right">
-    <li><a href="#" class="">Login</a></li> &nbsp; | &nbsp;
-    <li><a href="#" class="">Register</a></li> &nbsp; | &nbsp;
-    <li>
-    <a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Language <i class='fa fa-caret-down'></i></a>
-      <ul id="drop1" class="f-dropdown narrow" data-dropdown-content aria-hidden="true" tabindex="-1">
+    <% if !current_user %>
+      <li>
+        <a data-dropdown="login_form" aria-controls=login_form aria-expanded='false'>Login</a>
+          <ul id="login_form" class="f-dropdown small" data-dropdown-content aria-hidden="true" tabindex="-1">
+            <%= form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
+              <div><%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true %></div>
+              <div><%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "off" %></div>
+                <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+              <div><%= button_tag "Log in", :class => 'btn btn-submit'%></div>
+              <%= link_to "Forgot your password?", new_password_path(:user) %><br />
+            <% end %>
+          </ul>
+      </li> &nbsp; | &nbsp;
+      <li><a data-dropdown='registration_form' aria-controls='registration_form' aria-expanded='false'>Register</a>
+        <ul id="registration_form" class="f-dropdown small" data-dropdown-content aria-hidden="true" tabindex="-1">
+        <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
+          <div><%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true %></div>
+          <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+            <%= f.password_field :password, autocomplete: "off" %></div>
+          <div><%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+          <div><%= button_tag "Sign up", :class => 'btn btn-submit' %></div>
+        <% end %>
+        </ul>
+      </li> &nbsp; | &nbsp;
+      <% else %>
+        <li><a data-dropdown='sign_out' aria-controls='sign_out' aria-expanded='false'> Welcome, <%=current_user.email %> <i class='fa fa-caret-down'></i></a>
+          <ul id="sign_out" class="f-dropdown tiny" data-dropdown-content aria-hidden="true" tabindex="-1">
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li> 
+          </ul>
+        </li> &nbsp; | &nbsp;
+      <% end %>
+      <li>
+      <a data-dropdown="language" aria-controls="language" aria-expanded="false">Language <i class='fa fa-caret-down'></i></a>
+      <ul id="language" class="f-dropdown narrow" data-dropdown-content aria-hidden="true" tabindex="-1">
         <li><a href="#">English</a></li>
         <li><a href="#">Spanish</a></li>
         <li><a href="#">Swahili</a></li>
       </ul>
-    </li>
-    <li class='search'><%= search_field_tag 'search', nil, placeholder: 'Search' %></li>
-  </ul>
-</div>
-</nav> 
+      </li>
+      <li class='search'><%= search_field_tag 'search', nil, placeholder: 'Search' %></li>
+    </ul>
+  </div>
+  </nav>

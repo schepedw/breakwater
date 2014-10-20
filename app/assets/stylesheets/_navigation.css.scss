@@ -8,11 +8,11 @@
 
 nav ul.right{
   width:287px;
-  li{
+  &> li{
     list-style:none;
     display:inline;
     margin:0;
-    a{
+    &> a{
       font-size:11px;
       font-family: Arial, sans-serif;
       color: white;
@@ -23,7 +23,7 @@ nav ul.right{
 
 .f-dropdown.narrow{
   max-width: 100px;
-  height: 120px;
+  //height: 120px;
   overflow:scroll;
   li {
     a{
@@ -66,4 +66,15 @@ nav.row .no-padding-right{
   border-radius: 4px;
   background-color: rgba(0,0,0,.5);
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.f-dropdown{
+  a{
+    color: black;
+  }
+}
+
+#login_form .new_user, #registration_form .new_user {
+  padding:10px;
+  font-family: georgia, serif;
 }

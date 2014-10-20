@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,5 +56,6 @@ Rails.application.routes.draw do
   #   end
  get '/meet' => 'breakwater#meet_the_team'
  get '/timeline' => 'breakwater#timeline'
+ get '/about' => 'breakwater#about'
  root 'breakwater#index'
 end
