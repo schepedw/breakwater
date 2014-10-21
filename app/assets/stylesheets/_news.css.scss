@@ -1,0 +1,20 @@
+div.row.event{
+  background-color:#EBE4DA;//#C1C199;
+  margin-top: 20px;
+  padding-top:10px;
+  border-radius: 30px;
+  color:#5C423B;
+  h4{
+    color:#5C423B;
+  }
+  img{
+    opacity: 0.5;
+    padding-top:30%;
+  }
+  &:hover{
+    background-color:#DCD3CE;//#CCCCCC;
+    img{
+      opacity:1;
+    }
+  }
+}
