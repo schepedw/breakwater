@@ -1,8 +1,17 @@
-<ul class="button-group content-nav">
-  <li><%= link_to "Home", root_path, :class => 'button' %> </li>
-  <li><%= link_to "Timeline", timeline_path, :class => 'button' %> </li>
-  <li><%= link_to "Meet the Team", meet_path, :class => 'button' %> </li>
-  <li><%= link_to "About Breakwater", about_path, :class => 'button' %> </li>
-  <li><%= link_to "News & Events", news_path, :class => 'button' %> </li>
+<nav class = 'top-bar' data-topbar role = 'navigation'>
+<ul class = 'title-area'>
+  <li class = 'name'> </li>
+  <li class = 'toggle-topbar menu-icon'><a href = '#'><span>Menu</span></a></li>
 </ul>
+<section class = 'top-bar-section'>
+<ul class="content-nav">
+  <li><%= link_to "Home", root_path %> </li>
+  <li><%= link_to "Timeline", timeline_path %> </li>
+  <li><%= link_to "Meet the Team", meet_path %> </li>
+  <li><%= link_to "About Breakwater", about_path %> </li>
+  <li><%= link_to "News & Events", news_path %> </li>
+</ul>
+ </section>
+</nav>
+
 
